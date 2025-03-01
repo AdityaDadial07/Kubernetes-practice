@@ -1,1 +1,3 @@
-This repository contains a content folders for Kubernetes practice.
+# Kubernetes Practice Repository
+
+This repository contains a `content` folder for Kubernetes practice.
