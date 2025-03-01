@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  # Unique key of the Service instance
+  name: service-my-node-app
+spec:
+  ports:
+    # Accept traffic sent to port 8080
+    - name: http
+      port: 8080
+      targetPort: 3000
+  selector:
+    # Load balance traffic across Pods matching this label
+    app: node-app
+  type: LoadBalancer

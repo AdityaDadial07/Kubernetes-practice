@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Unique key of the Deployment instance
+  name: my-node-app
+spec:
+  # 1 replicas of the pod should be running
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        # Apply this label to pods and default
+        # This deployment label selector to this value
+        app: node-app
+    spec:
+      containers:
+        - name: node-app
+          image: philippaul/node-demo-app:01
