@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Unique key of the Deployment instance
+  name: my-nodedb-app
+spec:
+  # 1 replicas of the pod should be running
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodedb-app
+  template:
+    metadata:
+      labels:
+        # Apply this label to pods and default
+        # This deployment label selector to this value
+        app: nodedb-app
+    spec:
+      containers:
+        - name: nodedb-app
+          # Run this image
+          image: philippaul/node-mongo-db:02
+        - name: mongodb
+          image: mongo
